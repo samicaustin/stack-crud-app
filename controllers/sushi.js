@@ -63,5 +63,16 @@ router.get('/:id/edit', (req, res) => {
 
 // UPDATE ROUTE
 
+// DELETE ROUTE
+router.delete('/:id', (req, res) => {
+    Sushi.findByIdAndDelete(req.params.id, (err, deletedSushi) => {
+        if(err){
+            console.log(err)
+        }else{
+            console.log(deletedSushi);
+            res.redirect('/sushi');
+        }
+    });
+});
 
 module.exports = router; 
