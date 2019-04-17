@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
             console.log(err)
         }else{
             console.log(allSushi);
-            res.render('index.ejs')
+            res.render('index.ejs', {sushi: allSushi})
         }
     }
     )

@@ -12,13 +12,13 @@ mongoose.connect(connectionString, {
 });
 
 mongoose.connection.on('connected', () => {
-  console.log(`Mogoose connected to ${connectionString}`);
+  console.log(`Mongoose connected to ${connectionString}`);
 });
 
 mongoose.connection.on('disconnected', () => {
-  console.log(`Mogoose disconnected from ${connectionString}`);
+  console.log(`Mongoose disconnected from ${connectionString}`);
 });
 
 mongoose.connection.on('error', (err) => {
-  console.log(`Mogoose error: ${err}`);
+  console.log(`Mnogoose error: ${err}`);
 });

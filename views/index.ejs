@@ -4,10 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Index</title>
 </head>
 <body>
     <h1>All the Sushi!</h1>
-            
+
+        <ul>
+            <% for(let i = 0; i < sushi.length; i++){ %>
+                <li>
+                    The <a href="/sushi/<%=sushi[i]._id%>"><%=sushi[i].name; %></a> is  <%=sushi[i].fish; %>.
+                
+
+                    <form action="/sushi/<%=sushi[i]._id%>?_method=DELETE" method="POST">
+                      <button type="submit">Delete</button>
+                    </form>
+                    
+                </li>
+            <% } %>
+        </ul>
+
 </body>
 </html>
