@@ -15,6 +15,18 @@ router.get('/', (req, res) => {
     )
 });
 
+// SHOW ROUTE
+router.get('/:id', (req, res) => {
+    Sushi.findById(req.params.id, (err, oneSushi) => {
+        if (err){
+            console.log(err)
+        } else {
+            console.log(oneSushi);
+            res.render('show.ejs', {sushi: oneSushi})
+        }
+    })
+})
+
 // CREATE ROUTE
 router.post('/', (req, res) => {
     if(req.body.isRaw === 'on'){

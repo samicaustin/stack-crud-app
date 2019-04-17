@@ -12,13 +12,15 @@
         <ul>
             <% for(let i = 0; i < sushi.length; i++){ %>
                 <li>
-                    The <a href="/sushi/<%=sushi[i]._id%>"><%=sushi[i].name; %></a> is  <%=sushi[i].fish; %>.
+                    The <a href="/sushi/<%=sushi[i]._id%>"><%=sushi[i].name%></a> is made of <%=sushi[i].fish; %>. Raw? <%=sushi[i].isRaw%>
+                        
+    
                 
 
                     <form action="/sushi/<%=sushi[i]._id%>?_method=DELETE" method="POST">
                       <button type="submit">Delete</button>
                     </form>
-                    
+
                 </li>
             <% } %>
         </ul>
