@@ -9,6 +9,11 @@
 <body>
     <h1><%=sushi.name%>:</h1>
     Fish: <%=sushi.fish%><br>
-    Raw: <%=sushi.isRaw%>
+    Raw: <%=sushi.isRaw%><br>
+
+    <form action = '/sushi/<%=sushi._id%>/edit' method="GET">
+        <button type="submit">Edit!</button>
+    </form>
+
 </body>
 </html>

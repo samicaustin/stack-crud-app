@@ -49,9 +49,19 @@ router.get('/new', (req, res) => {
     res.render('new.ejs')
 })
 
+// EDIT ROUTE
+router.get('/:id/edit', (req, res) => {
+    Sushi.findById(req.params.id, (err, editSushi) => {
+        if(err){
+            console.log(err)
+        }else{
+            console.log(editSushi);
+            res.render('edit.ejs', {sushi: editSushi});
+            }   
+    })
+});
 
-
-
+// UPDATE ROUTE
 
 
 module.exports = router; 
